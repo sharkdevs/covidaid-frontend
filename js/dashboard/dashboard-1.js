@@ -145,38 +145,30 @@
  Morris.Bar({
     element: 'morris-bar-chart',
     data: [{
-        y: '2016',
-        a: 100,
-        b: 90,
+        y: 'Dec-2019',
+        'active cases': 10,
+        'Deaths': 0,
+        'Recovered': 0
+    },{
+        y: 'jan-2020',
+        'active cases': 40,
+        'Deaths': 10,
+        'Recovered': 20
     }, {
-        y: '2017',
-        a: 75,
-        b: 65,
-    }, {
-        y: '2018',
-        a: 50,
-        b: 40,
-    }, {
-        y: '2019',
-        a: 75,
-        b: 65,
-    }, {
-        y: '2020',
-        a: 50,
-        b: 40,
-    }, {
-        y: '2021',
-        a: 75,
-        b: 65,
-    }, {
-        y: '2022',
-        a: 100,
-        b: 90,
+        y: 'feb-2020',
+        'active cases': 80,
+        'Deaths': 30,
+        'Recovered': 30
+    },{
+        y: 'march-2020',
+        'active cases': 100,
+        'Deaths': 40,
+        'Recovered': 50
     }],
     xkey: 'y',
-    ykeys: ['a', 'b', 'c'],
-    labels: ['A', 'B', 'C'],
-    barColors: ['#FC6C8E', '#7571f9'],
+    ykeys: ['active cases', 'Deaths', 'Recovered'],
+    labels: ['active cases', 'Deaths', 'Recovered'],
+    barColors: ['#FFDA33', '#FF4233', '#6EFF33' ],
     hideHover: 'auto',
     gridLineColor: 'transparent',
     resize: true
@@ -227,30 +219,40 @@
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016"],
+            labels: ["Dec-2019", "Jan-2020", "Feb-2020", "March-2020"],
             type: 'line',
             defaultFontFamily: 'Montserrat',
             datasets: [{
-                data: [0, 15, 57, 12, 85, 10, 50],
-                label: "iPhone X",
-                backgroundColor: '#847DFA',
-                borderColor: '#847DFA',
+                data: [0, 15, 57, 12],
+                label: "Active cases",
+                backgroundColor: '#FFDA33',
+                borderColor: '#FFDA33',
                 borderWidth: 0.5,
                 pointStyle: 'circle',
                 pointRadius: 5,
                 pointBorderColor: 'transparent',
-                pointBackgroundColor: '#847DFA',
+                pointBackgroundColor: '#FFDA33',
             }, {
-                label: "Pixel 2",
-                data: [0, 30, 5, 53, 15, 55, 0],
-                backgroundColor: '#F196B0',
-                borderColor: '#F196B0',
+                label: "Death",
+                data: [0, 30, 5, 3],
+                backgroundColor: '#FF4233',
+                borderColor: '#FF4233',
                 borderWidth: 0.5,
                 pointStyle: 'circle',
                 pointRadius: 5,
                 pointBorderColor: 'transparent',
-                pointBackgroundColor: '#F196B0',
-            }]
+                pointBackgroundColor: '#FF4233',
+            }, {
+                label: "Recovered",
+                data: [0, 0, 55, 53],
+                backgroundColor: '#6EFF33',
+                borderColor: '#6EFF33',
+                borderWidth: 0.5,
+                pointStyle: 'circle',
+                pointRadius: 5,
+                pointBorderColor: 'transparent',
+                pointBackgroundColor: '#6EFF33',
+            },]
         },
         options: {
             responsive: !0,
